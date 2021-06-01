@@ -17,7 +17,7 @@ This bot checks if a predefined YouTube channel has uploaded a new video, if a r
 2. Rename you credentials file to `credentials.json` and put in bot root folder.
 3. Setup `config.py` (Read before **How to get the Playlist Id**)
 4. Install all necessary project dependencies
-5. Open folder with cmd and run `python3 src/main.py`
+5. Open folder with cmd and run `python3 main.py`
 6. If, for the first time, a page will open to login
 7. After login, the bot will start to work!
 
