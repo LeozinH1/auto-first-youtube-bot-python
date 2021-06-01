@@ -3,7 +3,7 @@ from config import *
 from log import Log
 import requests
 import json
-from google_auth import CommentVideo
+from google_auth import CommentVideo, AuthUser
 log = Log()
 
 
@@ -24,6 +24,7 @@ def GetLastVideoId(playlist_id) -> dict:
 
 
 def RunBot():
+    AuthUser()
     last_video = None
     log.info("Bot started sucessfully!")
     while True:
