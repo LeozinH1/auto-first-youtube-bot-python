@@ -29,19 +29,19 @@ def RunBot():
     log.info("Bot started sucessfully!")
     while True:
         try:
-            log.warn(f"Trying to get last video id...")
+            #log.warn(f"Trying to get last video id...")
             video_id = GetLastVideoId(PLAYLIST_ID)
-            log.info(f"ID of the last video taken successfully!")
+            #log.info(f"ID of the last video taken successfully!")
             if video_id["video_id"] != None:
                 if last_video == None:
                     last_video = video_id["video_id"]
                 elif last_video != video_id["video_id"]:
-                    log.warn(f"Trying to comment the video...")
+                    log.warn(f"[ {video_id['author_name']} ] Trying to comment the video...")
                     CommentVideo(video_id["video_id"], TEXT_COMMENT)
                     last_video = video_id["video_id"]
-                    log.info(f"Comment sended successfully!")
+                    log.info(f"[ {video_id['author_name']} ] Comment sended successfully! Comment: {TEXT_COMMENT}")
                 elif last_video == video_id["video_id"]:
-                    log.warn(f"No new videos found or the comment already been sended!")
+                    log.warn(f"[ {video_id['author_name']} ] No new videos found or the comment already been sended!")
             else:
                 raise TypeError("Video id was not found!")
         except Exception as e:
