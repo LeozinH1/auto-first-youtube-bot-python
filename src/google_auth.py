@@ -7,7 +7,7 @@ from google.oauth2.credentials import Credentials
 import requests
 
 
-from log import Log
+from src.log import Log
 
 log = Log()
 
@@ -22,8 +22,8 @@ def AuthUser():
     creds = None
 
     # IF: file token.json exists
-    if os.path.exists('../token.json'):
-        creds = Credentials.from_authorized_user_file('../token.json', SCOPES)
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
 
 
     # IF: Credentials not exists 
@@ -38,10 +38,10 @@ def AuthUser():
             # IF: crendetials not exist 
             # OR: not expired 
             # OR: not has refresh token
-            flow = InstalledAppFlow.from_client_secrets_file('../credentials.json', SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
             creds = flow.run_local_server(port=3000)
 
-        with open('../token.json', 'w') as token:
+        with open('token.json', 'w') as token:
             token.write(creds.to_json())
 
     return creds

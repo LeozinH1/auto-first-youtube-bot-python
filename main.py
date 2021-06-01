@@ -1,12 +1,15 @@
 from time import sleep as delay
-from config import *
-from log import Log
+from src.config import *
+from src.log import Log
 import requests
 import json
-from google_auth import CommentVideo, AuthUser
+from src.google_auth import CommentVideo, AuthUser
 log = Log()
+from win10toast import ToastNotifier
 
-
+toaster = ToastNotifier()
+t_duration = 5
+t_icon = "icon.ico"
 
 
 def GetLastVideoId(playlist_id) -> dict:
@@ -27,6 +30,7 @@ def RunBot():
     AuthUser()
     last_video = None
     log.info("Bot started sucessfully!")
+    toaster.show_toast("Auto First","Bot started sucessfully!", icon_path=t_icon, duration=t_duration)
     while True:
         try:
             #log.warn(f"Trying to get last video id...")
@@ -40,6 +44,7 @@ def RunBot():
                     CommentVideo(video_id["video_id"], TEXT_COMMENT)
                     last_video = video_id["video_id"]
                     log.info(f"[ {video_id['author_name']} ] Comment sended successfully! Comment: {TEXT_COMMENT}")
+                    toaster.show_toast("Comment sended",f"You posted a new comment in the last video of the channel {video_id['author_name']}!", icon_path=t_icon, duration=t_duration)
                 elif last_video == video_id["video_id"]:
                     log.warn(f"[ {video_id['author_name']} ] No new videos found or the comment already been sended!")
             else:
