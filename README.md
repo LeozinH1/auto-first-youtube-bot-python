@@ -27,4 +27,6 @@ Any problem with access, delete the file `token.json` and restart the bot
 1. Access the channel you want to comment on
 2. Click on **Videos** section and after that **Play All**
 3. Copy the id (in url) that is in **&list=**
-4. **Example**: https://www.youtube.com/watch?v=IRIcIMC1bMQ&list=UUrfluf17A1AsyOEZWpFzK2w&index=2. The ID is **UUrfluf17A1AsyOEZWpFzK2w**
+
+**Example**: https://www.youtube.com/watch?v=IRIcIMC1bMQ&list=UUrfluf17A1AsyOEZWpFzK2w&index=2. 
+The ID is **UUrfluf17A1AsyOEZWpFzK2w**
