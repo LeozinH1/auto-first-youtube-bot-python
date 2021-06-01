@@ -28,5 +28,5 @@ Any problem with access, delete the file `token.json` and restart the bot
 2. Click on **Videos** section and after that **Play All**
 3. Copy the id (in url) that is in **&list=**
 
-**Example**: https://www.youtube.com/watch?v=IRIcIMC1bMQ&list=UUrfluf17A1AsyOEZWpFzK2w&index=2. 
+**Example**: https://www.youtube.com/watch?v=IRIcIMC1bMQ&list=UUrfluf17A1AsyOEZWpFzK2w&index=2. \n
 The ID is **UUrfluf17A1AsyOEZWpFzK2w**
