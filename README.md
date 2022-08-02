@@ -12,7 +12,7 @@ This bot checks if a predefined YouTube channel has uploaded a new video, if a r
 
 1. Setup new application and download your credentials from the [Google API](https://console.developers.google.com "Google API") website 
 - Scopes: `https://www.googleapis.com/auth/youtube.force-ssl`
-- Authorized redirect URIs: `http://localhost:3000` 
+- Authorized redirect URIs: `http://localhost:3000/` 
 - Authorized JavaScript sources: `http://localhost:3000`
 2. Rename you credentials file to `credentials.json` and put in bot root folder.
 3. Setup `config.py` (Read before **How to get the Playlist Id**)
